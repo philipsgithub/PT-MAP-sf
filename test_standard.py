@@ -12,7 +12,8 @@ import math
 import torch.nn.functional as F
 import torch.optim as optim
 from numpy import linalg as LA
-from tqdm.notebook import tqdm
+#from tqdm.notebook import tqdm
+from tqdm import tqdm
 
 use_gpu = torch.cuda.is_available()
 
@@ -187,7 +188,7 @@ if __name__ == '__main__':
     
     import FSLTask
     cfg = {'shot':n_shot, 'ways':n_ways, 'queries':n_queries}
-    FSLTask.loadDataSet("cub_both_pretrained")
+    FSLTask.loadDataSet("cub_both")
     FSLTask.setRandomStates(cfg)
     ndatas = FSLTask.GenerateRunSet(cfg=cfg)
     ndatas = ndatas.permute(0,2,1,3).reshape(n_runs, n_samples, -1)
