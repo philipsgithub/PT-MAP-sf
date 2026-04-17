@@ -117,7 +117,7 @@ if __name__ == '__main__':
     
     #if params.dataset == 'miniImagenet' or params.dataset == 'CUB':
     datamgr       = SimpleDataManager_both(image_size, batch_size = 1)
-    novel_loader_dct      = datamgr.get_data_loader_dct(loadfile, aug = False)
+    novel_loader_dct      = datamgr.get_data_loader_dct(loadfile, aug = False, filter_size=params.filter_size)
     novel_loader_plain      = datamgr.get_data_loader(loadfile, aug = False)
 
     checkpoint_dir_plain = '%s/checkpoints/%s/%s_%s_%sway_%sshot_aug' %(configs.save_dir, params.dataset, params.model, params.method,params.test_n_way, params.n_shot)
