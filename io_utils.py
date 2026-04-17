@@ -51,6 +51,8 @@ def parse_args(script):
         parser.add_argument('--test_batch_size' , default=2, type=int, help='batch size ')
         parser.add_argument('--alpha'       , default=2.0, type=int, help='for manifold_mixup or S2M2 training ')
         parser.add_argument('--warmup'      , action='store_true', help='continue from baseline, neglected if resume is true') #never used in the paper
+        parser.add_argument('--filter_size', default=8, help='size of DCT filter, per default 8.')
+        parser.add_argument('--checkpoint_dir', default="./checkpoints")
     elif script == 'save_features':
         parser.add_argument('--split'       , default='novel', help='base/val/novel') #default novel, but you can also test base/val class accuracy if you want 
         parser.add_argument('--save_iter', default=-1, type=int,help ='save feature from the model trained in x epoch, use the best model if x is -1')
