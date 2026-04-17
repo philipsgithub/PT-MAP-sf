@@ -41,6 +41,17 @@ To run PT+MAP install with:
 
 ============================================================================
 
+### Usage
+
+1. Prepare dataset: create train, val and novel JSON files
+2. Adapt train and test params in io_utils.py
+2. First train with rotation as method, than S2M2_R (depends on output of rotation)
+3. Extract features with trained models
+4. Test on novel data
+
+============================================================================
+
+
 ### Prepare the dataset:
 
 #### CUB
