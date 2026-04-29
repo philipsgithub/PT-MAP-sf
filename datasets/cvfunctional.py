@@ -7,7 +7,7 @@ import cv2
 import numpy as np
 import numbers
 import types
-import collections
+import collections.abc
 import warnings
 import matplotlib.pyplot as plt
 from torchvision.transforms import functional
@@ -223,7 +223,7 @@ def resize(img, size, interpolation='BILINEAR'):
     """
     if not _is_numpy_image(img):
         raise TypeError('img should be CV Image. Got {}'.format(type(img)))
-    if not (isinstance(size, int) or (isinstance(size, collections.Iterable) and len(size) == 2)):
+    if not (isinstance(size, int) or (isinstance(size, collections.abc.Iterable) and len(size) == 2)):
         raise TypeError('Got inappropriate size arg: {}'.format(size))
 
     if isinstance(size, int):

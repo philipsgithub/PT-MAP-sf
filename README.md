@@ -58,7 +58,11 @@ Do the same with S2M2_R as method, as it depends on output of training with rota
 it will extract features with trained models (s+f). See possible parameters below.
 4. Run: 
 ``` python test_standard.py```
+<<<<<<< HEAD
 to test on novel data (adapt dataset in test_standard.py, like cub_both for s+f features).
+=======
+to test PT-MAP-sf on novel data (adapt dataset in test_standard.py, like cub_both for s+f features).
+>>>>>>> master
 
 ============================================================================
 
