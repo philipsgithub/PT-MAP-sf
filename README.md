@@ -41,6 +41,28 @@ To run PT+MAP install with:
 
 ============================================================================
 
+### Usage of PT-MAP-sf
+
+1. Prepare dataset: create train, val and novel JSON files
+2. Adapt train and test params in io_utils.py
+2. First train models:
+```
+python train_dct.py --dataset [DATASETNAME] --method rotation --model WideResNet28_10 --train_aug --dct_status
+```
+```
+python train_dct.py --dataset [DATASETNAME] --method rotation --model WideResNet28_10 --train_aug
+```
+Do the same with S2M2_R as method, as it depends on output of training with rotation as method.
+3. Run:
+```save_plk_both.py --dataset [DATASETNAME] --method S2M2_R --model WideResNet28_10 --train_aug```
+it will extract features with trained models (s+f). See possible parameters below.
+4. Run: 
+``` python test_standard.py```
+to test PT-MAP-sf on novel data (adapt dataset in test_standard.py, like cub_both for s+f features).
+
+============================================================================
+
+
 ### Prepare the dataset:
 
 #### CUB
